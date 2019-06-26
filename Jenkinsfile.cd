@@ -257,7 +257,7 @@ options.skip([StagesEnum.PYPI_RELEASE])
 //options.skip([StagesEnum.PACK_RELEASE])
 //options.skip([StagesEnum.PACK_RELEASE_COPY])
 //options.skip([StagesEnum.SYSTEM_TESTS])
-options.skip([StagesEnum.GITHUB_RELEASE])
+//options.skip([StagesEnum.GITHUB_RELEASE])
 
 
 // TODO duplicates list from build scripts
