@@ -248,7 +248,6 @@ def options = new TestAndPublishOptions()
 options.setPkgName(pkgName)
 options.setApprovers([])
 
-env.SOVRIN_CORE_REPO_NAME = 'test'
 options.skip([StagesEnum.IS_TESTED])
 options.skip([StagesEnum.STATIC_CODE_VALIDATION])
 options.skip([StagesEnum.TEST])
