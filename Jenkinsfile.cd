@@ -246,19 +246,19 @@ def systemTests = { component, releaseVersion ->
 
 def options = new TestAndPublishOptions()
 options.setPkgName(pkgName)
-options.setApprovers(['QA'])
-options.setNotifEmails([
-    QA: [
-        to: "${env.INDY_NODE_QA_RECIPIENTS ?: ''}",
-        cc: "${env.INDY_NODE_RECIPIENTS ?: ''}"
-    ],
-    success: [
-        to: "${env.INDY_NODE_RECIPIENTS ?: ''}"
-    ],
-    fail: [
-        to: "${env.INDY_NODE_RECIPIENTS ?: ''}"
-    ]
-])
+options.setApprovers([])
+
+options.skip([StagesEnum.IS_TESTED])
+options.skip([StagesEnum.STATIC_CODE_VALIDATION])
+options.skip([StagesEnum.TEST])
+options.skip([StagesEnum.AUTOMERGE])
+options.skip([StagesEnum.GET_RELEASE_VERSION])
+options.skip([StagesEnum.PYPI_RELEASE])
+//options.skip([StagesEnum.PACK_RELEASE])
+//options.skip([StagesEnum.PACK_RELEASE_COPY])
+//options.skip([StagesEnum.SYSTEM_TESTS])
+options.skip([StagesEnum.GITHUB_RELEASE])
+
 
 // TODO duplicates list from build scripts
 options.setBuiltPkgs([
